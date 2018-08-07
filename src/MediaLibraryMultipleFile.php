@@ -2,7 +2,7 @@
 
 namespace Luischavez\Admin\Media\library;
 
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Encore\Admin\Form\Field\UploadField;
 use Encore\Admin\Form\Field\MultipleFile;
 use Spatie\MediaLibrary\Models\Media;
 
