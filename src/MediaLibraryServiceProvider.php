@@ -12,7 +12,7 @@ class MediaLibraryServiceProvider extends ServiceProvider
     {
         Route::model('media', \Spatie\MediaLibrary\Models\Media::class);
 
-        Route::group(['prefix' => 'media'], function ($router) use ($callback) {
+        Route::group(['prefix' => 'media'], function ($router) {
             $router->group(['middleware' => config('admin.media.middleware')], function ($router) {
                 $router->get('download/{media}', 
                     '\Luischavez\Admin\Media\library\MediaLibraryController@download')
