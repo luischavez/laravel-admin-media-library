@@ -7,9 +7,10 @@ use Spatie\MediaLibrary\Models\Media;
 
 class MediaLibraryMultipleFile extends MultipleFile
 {
+    protected $view = 'admin::form.multiplefile';
 
     public function objectUrl($media)
     {
-        return parent::objectUrl(Media::findOrFail($media['id'])->getPath());
+        return URL::route('admin.media.download', $media['id']);
     }
 }
