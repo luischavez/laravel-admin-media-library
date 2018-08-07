@@ -13,6 +13,7 @@ class MediaLibraryController extends BaseController
     {
         $media = Media::findOrFail($id);
 
-        return response()->download($media->getPath(), $media->file_name);
+        return response()->download($media->getPath(), 
+            $media->file_name, ['Content-Type' => $media->mime_type], 'inline');
     }
 }
