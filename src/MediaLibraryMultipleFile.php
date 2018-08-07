@@ -10,8 +10,17 @@ class MediaLibraryMultipleFile extends MultipleFile
 {
     protected $view = 'admin::form.multiplefile';
 
-    public function objectUrl($media)
+    public function fill($data)
     {
-        return URL::route('admin.media.download', $media['id']);
+        parent::fill($data);
+
+        foreach ($this->value as $key => $media) {
+            $this->value[$key] = $media['id'];
+        }
+    }
+
+    public function objectUrl($mediaId)
+    {
+        return URL::route('admin.media.download', $mediaId);
     }
 }
