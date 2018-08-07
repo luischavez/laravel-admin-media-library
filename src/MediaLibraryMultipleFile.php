@@ -2,6 +2,7 @@
 
 namespace Luischavez\Admin\Media\library;
 
+use Illuminate\Support\Facades\URL;
 use Encore\Admin\Form\Field\MultipleFile;
 use Spatie\MediaLibrary\Models\Media;
 
