@@ -10,8 +10,6 @@ class MediaLibraryServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        Deploy::boot();
-
         Route::model('media', \Spatie\MediaLibrary\Models\Media::class);
 
         Route::group(['prefix' => 'media'], function ($router) use ($callback) {
